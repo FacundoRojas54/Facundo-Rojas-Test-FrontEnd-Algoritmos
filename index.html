@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<!--EJERCICIO 1: Crear un algoritmo que recorra un array unidimensional conteniendo letras y números: [ “a”, 10, “b”, “hola”, 122, 15]
+      a-Obtenga un array que contenga solo letras
+      b-Obtenga un array que contenga sólo números
+      c-Obtenga el mayor número del array anterior-->
+
+
+
+
+
+    <script>
+      
+      const array = [ "a", 10, "b", "hola" , 123, 15]
+        function exercice1(array) {
+            const letters = array.filter(letter => typeof(letter)=="string")
+            const numbers = array.filter(number => typeof(number)=="number")
+            var higherNumber = Math.max(...numbers)
+            console.log('Ejercicio 1)A- Sólo letras: ' + letters);
+            console.log('Ejercicio 1)B- Sólo números:  ' + numbers);
+            console.log('Ejercicio 1)C- Número mayor:  ' + higherNumber);
+
+            return(numbers,letters,higherNumber)
+          }
+
+        exercice1(array);
+
+    </script>
+
+
+
+
+    <!--Crear un algoritmo de búsqueda que verifique que: el valor let a = 10 no esté dentro
+del array: [ 1, 11, “a”, “b”, 123]-->
+
+
+
+
+   <script>
+      let array2 = [1, 11, 'a', 'b', 123];
+      let value= 10
+        function search(array, value) {
+
+            let state = `${value} NO existe en el array`;
+            for (let i = 0; i < array.length; i++) {
+              if (array[i] == value) {
+                state = `${value} SÍ existe en el array y se encuentra en la posición ${i} del mismo`;
+                break;
+              }}
+              console.log(state)
+        }
+      search(array2,value)
+
+    </script>
+
+
+    <!--Cree un algoritmo que genere el siguiente patrón de ID aleatorio: XXXX-AAAA-BBBB-CCCC-->
+
+
+
+
+    <script>
+    function IDGenerator() {
+      let first = Math.random().toString(36).toUpperCase().substr(-4)
+      let second = Math.random().toString(36).toUpperCase().substr(-4)
+      let third = Math.random().toString(36).toUpperCase().substr(-4)
+      let fourth = Math.random().toString(36).toUpperCase().substr(-4)
+      return `${first}-${second}-${third}-${fourth}`;
+    }
+    let id = IDGenerator();
+    console.log('EJERCICIO 3)' + id);
+
+    </script>
+</body>
+</html>
